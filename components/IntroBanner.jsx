@@ -2,7 +2,7 @@ import * as motion from "motion/react-client";
 
 export default function IntroBanner() {
   return (
-    <div className="bg-black  pt-20">
+    <div className="bg-black pt-30 md:pt-20">
       {/* bagian jumlah prestasi  */}
       <div className="" style={{ backgroundColor: "#222831" }}>
         <motion.div
@@ -10,19 +10,27 @@ export default function IntroBanner() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: false }}
           transition={{ duration: 0.3 }}
-          className="flex flex-row justify-between px-60 py-10"
+          className="flex flex-row justify-between px-10 md:px-60 py-10 gap-5 md:gap-0"
         >
           <div className="flex flex-col">
-            <h1 className="text-6xl font-bold text-center">20+</h1>
-            <p className="text-xl">Movie Gendres</p>
+            <h1 className="text-3xl md:text-6xl font-bold text-center">20+</h1>
+            <p className="text-center text-xm md:text-xl">Movie Gendres</p>
           </div>
           <div className="flex flex-col">
-            <h1 className="text-6xl font-bold text-center">+5000</h1>
-            <p className="text-xl">Film in Our Library</p>
+            <h1 className="text-3xl md:text-6xl font-bold text-center">
+              +5000
+            </h1>
+            <p className="text-center text-xm md:text-xl">
+              Film in Our Library
+            </p>
           </div>
           <div className="flex flex-col">
-            <h1 className="text-6xl font-bold text-center">1000+</h1>
-            <p className="text-xl">Recommendations Served</p>
+            <h1 className="text-3xl md:text-6xl font-bold text-center">
+              1000+
+            </h1>
+            <p className="text-center text-xm md:text-xl">
+              Recommendations Served
+            </p>
           </div>
         </motion.div>
       </div>
@@ -34,14 +42,14 @@ export default function IntroBanner() {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: false }}
         transition={{ duration: 0.9 }}
-        className="flex flex-row gap-30 px-50 pt-20"
+        className="flex flex-col md:flex-row gap-10 md:gap-30 px-10 md:px-50 pt-10 md:pt-20"
       >
-        <div className="w-1/2">
-          <h1 className="text-6xl font-semibold">
+        <div className=" w-full md:w-1/2">
+          <h1 className="text-3xl md:text-6xl font-semibold">
             WE HAVE MANY RECOMMENDATIONS FILM AROUND THE WORLD FOR EVERY GENDRES
           </h1>
         </div>
-        <div className="w-1/2 flex flex-col">
+        <div className="w-full md:w-1/2 flex flex-col">
           <h1 className="text-xl">
             From edge of your seat thrillers to heartwarming romances, inspiring
             documentaries to laugh outloud comedies{" "}

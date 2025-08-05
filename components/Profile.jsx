@@ -2,8 +2,12 @@
 
 import Link from "next/link";
 import * as motion from "motion/react-client";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { useState } from "react";
 
 export default function Profile() {
+  const [isOpen, setIsOpen] = useState();
+
   const film = [
     { img: "/navbar2.png", link: "https://youtu.be/i2yeRM9jcqc" },
     { img: "/navbar3.png", link: "https://youtu.be/HiVzpboRpR0" },
@@ -15,9 +19,34 @@ export default function Profile() {
     { img: "/navbar9.jpeg", link: "https://youtu.be/MUIqUhSFoyw" },
     { img: "/navbar10.jpeg", link: "https://youtu.be/eHp3MbsCbMg" },
     { img: "/navbar11.jpeg", link: "https://youtu.be/hktzirCnJmQ" },
-    { img: "/navbar12.jpeg", link: "https://youtu.be/rBxcF-r9Ibs" },
-    { img: "/navbar13.jpeg", link: "https://youtu.be/1ovgxN2VWNc" },
   ];
+
+  const film_second = [
+    { img: "/navbar14.jpeg", link: "https://youtu.be/i2yeRM9jcqc" },
+    { img: "/navbar15.jpeg", link: "https://youtu.be/HiVzpboRpR0" },
+    { img: "/navbar16.jpeg", link: "https://youtu.be/LkUsJMFngiI" },
+    { img: "/navbar17.jpeg", link: "https://youtu.be/0uf6QUacVgs" },
+    { img: "/navbar18.jpeg", link: "https://youtu.be/mqqft2x_Aa4" },
+    { img: "/navbar19.jpeg", link: "https://youtu.be/lwxZiv4aihg" },
+    { img: "/navbar20.jpeg", link: "https://youtu.be/rWsnLS0Q7G0" },
+    { img: "/navbar21.jpeg", link: "https://youtu.be/MUIqUhSFoyw" },
+    { img: "/navbar22.jpeg", link: "https://youtu.be/eHp3MbsCbMg" },
+    { img: "/navbar23.jpeg", link: "https://youtu.be/hktzirCnJmQ" },
+  ];
+
+  const film_third = [
+    { img: "/navbar24.jpeg", link: "https://youtu.be/i2yeRM9jcqc" },
+    { img: "/navbar25.jpeg", link: "https://youtu.be/HiVzpboRpR0" },
+    { img: "/navbar26.jpeg", link: "https://youtu.be/LkUsJMFngiI" },
+    { img: "/navbar27.jpeg", link: "https://youtu.be/0uf6QUacVgs" },
+    { img: "/navbar28.jpeg", link: "https://youtu.be/mqqft2x_Aa4" },
+    { img: "/navbar29.jpeg", link: "https://youtu.be/lwxZiv4aihg" },
+    { img: "/navbar20.jpeg", link: "https://youtu.be/rWsnLS0Q7G0" },
+    { img: "/navbar31.jpeg", link: "https://youtu.be/MUIqUhSFoyw" },
+    { img: "/navbar32.jpeg", link: "https://youtu.be/eHp3MbsCbMg" },
+    { img: "/navbar33.jpeg", link: "https://youtu.be/hktzirCnJmQ" },
+  ];
+
   return (
     <div className="bg-black relative">
       <div className="">
@@ -57,70 +86,195 @@ export default function Profile() {
         </div>
       </div>
       <div className="absolute top-0 left-0 bg-black/90 w-full h-full">
-        <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-row justify-between px-30 py-10"
-        >
-          <h1 className="font-bold text-4xl">
+        {/* navbar desktop */}
+        <div className="hidden md:block">
+          <motion.div
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.3 }}
+            className="flex flex-row justify-between px-30 py-10"
+          >
+            <h1 className="font-bold  text-4xl">
+              Nonton<span className="text-red-700">YUK</span>
+            </h1>
+            <div className="flex flex-row gap-20 px-96">
+              <Link href="/" className="text-xl hover:text-red-700">
+                HOME
+              </Link>
+              <Link href="/gendre" className="text-xl hover:text-red-700">
+                GENDRE
+              </Link>
+              <Link href="/about" className="text-xl hover:text-red-700">
+                ABOUT
+              </Link>
+              <Link
+                href="/about#contact"
+                className="text-xl hover:text-red-700"
+              >
+                CONTACT
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+        {/* navbar mobile */}
+        <div className="flex flex-row justify-between p-3  md:hidden">
+          <h1 className="font-bold  text-2xl">
             Nonton<span className="text-red-700">YUK</span>
           </h1>
-          <div className="flex flex-row gap-20 px-96">
-            <Link href="/" className="text-xl hover:text-red-700">
-              HOME
-            </Link>
-            <Link href="/gendre" className="text-xl hover:text-red-700">
-              GENDRE
-            </Link>
-            <Link href="/about" className="text-xl hover:text-red-700">
-              ABOUT
-            </Link>
-            <Link href="/about#contact" className="text-xl hover:text-red-700">
-              CONTACT
-            </Link>
-          </div>
-        </motion.div>
+          <button onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? (
+              <FaTimes className="text-xl" />
+            ) : (
+              <FaBars className="text-xl" />
+            )}
+          </button>
+        </div>
+        <div className="">
+          {isOpen && (
+            <div className="flex flex-col px-3 pb-2">
+              <Link
+                href="/"
+                className="text-xm hover:text-red-700 hover:bg-gray-300"
+              >
+                HOME
+              </Link>
+              <Link
+                href="/gendre"
+                className="text-xm hover:text-red-700 hover:bg-gray-300"
+              >
+                GENDRE
+              </Link>
+              <Link
+                href="/about"
+                className="text-xm hover:text-red-700 hover:bg-gray-300"
+              >
+                ABOUT
+              </Link>
+              <Link
+                href="/about#contact"
+                className="text-xm hover:text-red-700 hover:bg-gray-300"
+              >
+                CONTACT
+              </Link>
+            </div>
+          )}
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           transition={{ duration: 0.6 }}
-          className="px-30 py-5"
+          className="px-3 md:px-30"
         >
-          <h1 className="text-6xl font-semibold text-center leading-18">
+          <h1 className=" text-3xl md:text-6xl font-semibold text-center md:leading-18">
             ONE CLICK AWAY FROM YOUR NEXT FAVORITE MOVIE WITH Nonton
             <span className="text-red-700">YUK</span>
           </h1>
-          <p className="text-xl text-center py-3">
+          <p className="text-xs md:text-xl text-center py-3">
             Discover handpicked movie recommendations based on your mood, genre
             preferences, and trending titles no more scrolling endlessly.
           </p>
         </motion.div>
-        <div className="relative z-50 w-full px-30 py-5">
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 1.2 }}
-            className="flex flex-row gap-6 flex-wrap justify-center"
-          >
-            {film.map((item, index) => (
-              <a
-                key={index}
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={item.img}
-                  alt={`film-${index}`}
-                  className="w-[200px] h-[300px] object-cover rounded-xl shadow-lg hover:scale-105 transition duration-300"
-                />
-              </a>
-            ))}
-          </motion.div>
+        <div className="relative z-50 w-full md:px-30 py-5">
+          {/* tampilan desktop */}
+          <div className="hidden md:block ">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 1.2 }}
+              className="flex flex-row gap-6 flex-wrap justify-center "
+            >
+              {film.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={item.img}
+                    alt={`film-${index}`}
+                    className="w-[200px] h-[300px] object-cover rounded-xl shadow-lg hover:scale-105 transition duration-300"
+                  />
+                </a>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* tampilan mobile  */}
+          <div className="flex flex-col gap-5">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 1.2 }}
+              className="flex gap-4 overflow-x-auto scrollbar-hide px-4 md:hidden"
+            >
+              {film.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0"
+                >
+                  <img
+                    src={item.img}
+                    alt={`film-${index}`}
+                    className="w-[160px] h-[240px] object-cover rounded-xl shadow-lg hover:scale-105 transition duration-300"
+                  />
+                </a>
+              ))}
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 1.2 }}
+              className="flex gap-4 overflow-x-auto scrollbar-hide px-4 md:hidden"
+            >
+              {film_second.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0"
+                >
+                  <img
+                    src={item.img}
+                    alt={`film-${index}`}
+                    className="w-[160px] h-[240px] object-cover rounded-xl shadow-lg hover:scale-105 transition duration-300"
+                  />
+                </a>
+              ))}
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 1.2 }}
+              className="flex gap-4 overflow-x-auto scrollbar-hide px-4 md:hidden"
+            >
+              {film_third.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0"
+                >
+                  <img
+                    src={item.img}
+                    alt={`film-${index}`}
+                    className="w-[160px] h-[240px] object-cover rounded-xl shadow-lg hover:scale-105 transition duration-300"
+                  />
+                </a>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </div>
     </div>

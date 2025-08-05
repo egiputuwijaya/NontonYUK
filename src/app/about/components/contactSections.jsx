@@ -95,7 +95,7 @@ export default function ContactSections() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 1.3 }}
-            className="flex flex-row justify-center gap-10 max-w-5xl mx-auto px-6"
+            className="flex flex-row flex-wrap justify-center gap-10 max-w-5xl mx-auto px-6"
           >
             {/* Contact Card */}
             <a
