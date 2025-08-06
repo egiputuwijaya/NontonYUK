@@ -24,8 +24,8 @@ export default function Navbar() {
             <Link href="/" className="text-xl hover:text-red-700">
               HOME
             </Link>
-            <Link href="/gendre" className="text-xl hover:text-red-700">
-              GENDRE
+            <Link href="/genre" className="text-xl hover:text-red-700">
+              GENRE
             </Link>
             <Link href="/about" className="text-xl hover:text-red-700">
               ABOUT
@@ -54,27 +54,18 @@ export default function Navbar() {
         <div className="">
           {isOpen && (
             <div className="flex flex-col px-3 pb-2">
-              <Link
-                href="/"
-                className="text-xm hover:text-red-700 hover:bg-gray-300"
-              >
+              <Link href="/" className="text-xm hover:text-red-700">
                 HOME
               </Link>
-              <Link
-                href="/gendre"
-                className="text-xm hover:text-red-700 hover:bg-gray-300"
-              >
-                GENDRE
+              <Link href="/genre" className="text-xm hover:text-red-700 ">
+                GENRE
               </Link>
-              <Link
-                href="/about"
-                className="text-xm hover:text-red-700 hover:bg-gray-300"
-              >
+              <Link href="/about" className="text-xm hover:text-red-700 ">
                 ABOUT
               </Link>
               <Link
                 href="/about#contact"
-                className="text-xm hover:text-red-700 hover:bg-gray-300"
+                className="text-xm hover:text-red-700 "
               >
                 CONTACT
               </Link>

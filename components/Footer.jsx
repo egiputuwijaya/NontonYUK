@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <div className="py-10" style={{ backgroundColor: "#222831" }}>
@@ -16,18 +18,33 @@ export default function Footer() {
         </div>
         <div className="flex flex-col gap-3">
           <h1 className="text-xl font-semibold">MENU</h1>
-          <a href="" className="hover:text-red-700">
+          <Link
+            href="/"
+            className="text-xm hover:text-red-700 "
+          >
             HOME
-          </a>
-          <a href="" className="hover:text-red-700">
-            GENDRE
-          </a>
-          <a href="" className="hover:text-red-700">
+          </Link>
+          <Link
+            href="/genre"
+            className="text-xm hover:text-red-700 "
+          >
+            GENRE
+          </Link>
+          <Link
+            href="/about"
+            className="text-xm hover:text-red-700 "
+          >
             ABOUT
-          </a>
+          </Link>
+          <Link
+            href="/about#contact"
+            className="text-xm hover:text-red-700 "
+          >
+            CONTACT
+          </Link>
         </div>
         <div className="flex flex-col gap-3">
-          <h1 className="text-xl font-semibold">GENDRES</h1>
+          <h1 className="text-xl font-semibold">GENRES</h1>
           <a href="" className="hover:text-red-700">
             ACTION
           </a>

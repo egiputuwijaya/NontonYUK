@@ -102,8 +102,8 @@ export default function Profile() {
               <Link href="/" className="text-xl hover:text-red-700">
                 HOME
               </Link>
-              <Link href="/gendre" className="text-xl hover:text-red-700">
-                GENDRE
+              <Link href="/genre" className="text-xl hover:text-red-700">
+                GENRE
               </Link>
               <Link href="/about" className="text-xl hover:text-red-700">
                 ABOUT
@@ -140,10 +140,10 @@ export default function Profile() {
                 HOME
               </Link>
               <Link
-                href="/gendre"
+                href="/genre"
                 className="text-xm hover:text-red-700 hover:bg-gray-300"
               >
-                GENDRE
+                GENRE
               </Link>
               <Link
                 href="/about"
