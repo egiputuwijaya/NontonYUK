@@ -82,7 +82,7 @@ export default function ContactSections() {
       <section id="contact">
         <div className="pt-32">
           <motion.h1
-            initial={{ opacity: 0, y:30 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 1.3 }}
@@ -111,7 +111,7 @@ export default function ContactSections() {
             </a>
 
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/egi_wjy"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 bg-[#212121] p-4 rounded-xl hover:scale-105 transition-transform duration-300 shadow-md w-[260px] border border-white/10"
@@ -123,7 +123,7 @@ export default function ContactSections() {
             </a>
 
             <a
-              href="mailto:your@email.com"
+              href="mailto:egiputuwijaya@gmail.com"
               className="flex items-center gap-4 bg-[#212121] p-4 rounded-xl hover:scale-105 transition-transform duration-300 shadow-md w-[260px] border border-white/10"
             >
               <FaEnvelope className="text-yellow-400 text-3xl" />

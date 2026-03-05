@@ -37,7 +37,7 @@ export default function Navbar() {
         </motion.div>
       </div>
 
-      {/* tampilan desktop */}
+      {/* tampilan mobile */}
       <div className="block md:hidden">
         <div className="flex flex-row justify-between p-3  md:hidden">
           <h1 className="font-bold  text-2xl">
